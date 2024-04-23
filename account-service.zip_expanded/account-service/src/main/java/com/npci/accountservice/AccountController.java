@@ -16,10 +16,10 @@ public class AccountController  {
 	@Value("${server.port}")
 	private String port;
 	
-	@Value("${databse.username}")
+	@Value("${database.username}")
 	private String username;
 	
-	@Value("${databse.password}")
+	@Value("${database.password}")
 	private String password;
 	
 	
