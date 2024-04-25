@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Learning jS for React</h1>
+    <button onclick=increment()>+</button>
+    <button onclick=decrement()>-</button>
+    <div id="a">
+
+    </div>
+    <script type="text/javascript" src="main.js"></script>
+    <script>
+        let username='Harshit'
+        let age=24;
+        let email='harshit@gmail.com';
+        document.write('<p>Name = '+username+',Age= '+age+', Email= '+email+' </p>');
+        
+        document.write(`<p>Name=${username},Age=${age},Email=${email}</p>`);
+
+        class Employee{
+            constructor(id,name,salary)
+            {
+                this.id=id;
+                this.name=name;
+                this.salary=salary;
+            }
+
+            display()
+            {
+                document.write(`<p>Id=${this.id},Name=${this.name},Salary=${this.salary}</p>`)
+            }
+        }
+        let emp1=new Employee(100,"Vikash",37500);
+        let emp2=new Employee(200,"Shivendra",39500);
+        emp1.display();
+        emp2.display();
+
+        let items=[2,3,4,1,6,5];
+        for(let i=0;i<items.length;i++)
+        {
+            document.write(`<p>items at ${i}=${items[i]}</p>`)
+        }
+
+        items.forEach(function(item,index){ 
+            document.write(`<p>Item=${item} is at ${index} </p>`)
+        });
+        
+       let anotherItems=items.map(function(item,index)  {
+            return item+0.1;
+        });
+        
+        anotherItems.forEach(function(value,index){
+            document.write(`<p> Item After Transformation :${value}</p>`)
+        });
+
+        let someMoreItems=items.map((value,index)=>value+10);
+        someMoreItems.forEach((item,index)=>document.write(`Arrow Fn ${item} at ${index} </p>`));
+
+
+        let random=Math.ceil(Math.random()*10000);
+        document.write(`<p>Random Number =${random}</p>`);
+       // fill the 0 in the begining to make 4 character string if lenght is <4 
+        let otp4digits=random.toString().padStart(4,'X');
+        let otp6digits=random.toString().padEnd(6,'X');
+        document.write(`<p>4 digits =${otp4digits} , 6 digits= ${otp6digits}</p>`);
+
+        usersArray=[
+            {id:100,name:"sid",address:{state:"KA",city:"BLR"}},
+            {id:200,name:"chinmay"},
+            {id:300,name:"vijay",address:{state:"MH",city:"MUM"}}
+        ];
+        usersArray.forEach(
+            (item,index)=>document.write(`<p>Name= ${item.name},state=${item.address?.state}</p>`)
+            );
+        usersArray.forEach(
+            (item,index)=>document.write(`<p>Name= ${item.name},Address=${item.address?.state!=undefined?item.address.state:"Not Found"}</p>`)
+            );
+       
+
+    </script>
+</body>
+
+</html>
